@@ -7,7 +7,7 @@
     <owners>Deloitte Digital</owners>
     <licenseUrl>https://github.com/DeloitteDigitalAPAC/Atlas/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DeloitteDigitalAPAC/Atlas/</projectUrl>
-	  <iconUrl>http://www.deloittedigital.com/favicon.ico</iconUrl>
+	  <iconUrl>https://github.com/DeloitteDigitalAPAC/Atlas/blob/master/lib/logos/dd-logo-square.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Atlas is the Deloitte Digital Framework for Sitecore Development</description>
     <tags>sitecore deloitte atlas</tags>
