@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NuGetExecutable>..\..\Tools\nuget.exe</NuGetExecutable>
+    <NuSpec>..\..\Build\DeloitteDigital.Atlas.nuspec</NuSpec>
+    <NuGetPackageOutputPath>..\..\BuildOutputs</NuGetPackageOutputPath>
+  </PropertyGroup>
+  <Target Name="BuildNuGetPackage">
+    <Message Text="Copying Atlas asselmbly..." Importance="high" />
+    <ItemGroup>
+      <Dlls Include="$(OutputPath)\DeloitteDigital.Atlas.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(Dlls)" DestinationFolder="$(NuGetPackageOutputPath)" />
+    <Message Text="Building NuGet package..." Importance="high" />
+    <Exec Command="$(NuGetExecutable) pack $(NuSpec) -OutputDirectory $(NuGetPackageOutputPath)"/>
+  </Target>
+</Project>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build;BuildNuGetPackage" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\Build\DeloitteDigital.Atlas.NuGet.xml" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{601B96BD-D95F-4281-9A1B-7D99374DD869}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeloitteDigital.Atlas</RootNamespace>
+    <AssemblyName>DeloitteDigital.Atlas</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Kernel.NoReferences.8.2.160729\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Mvc.NoReferences.8.2.160729\lib\NET452\Sitecore.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheHelper.cs" />
+    <Compile Include="Caching\CacheItem.cs" />
+    <Compile Include="Caching\Events\ClearCacheOnPublishEnd.cs" />
+    <Compile Include="Caching\ICache.cs" />
+    <Compile Include="Caching\ICacheService.cs" />
+    <Compile Include="Caching\WebCache.cs" />
+    <Compile Include="Caching\WebCacheService.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DataSource.cs" />
+    <Compile Include="DataSourceParser.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Extensions\PerHttpRequestFactory.cs" />
+    <Compile Include="Extensions\RepeaterExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Extensions\UrlExtensions.cs" />
+    <Compile Include="Logging\ILogService.cs" />
+    <Compile Include="Logging\Log4net\Log4netService.cs" />
+    <Compile Include="Logging\LogExtensions.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogScope.cs" />
+    <Compile Include="Multisite\Datasource\ConventionBasedDatasourceProvider.cs" />
+    <Compile Include="Multisite\Datasource\GetDatasourceLocationFromProviders.cs" />
+    <Compile Include="Multisite\Datasource\IDataSourceProvider.cs" />
+    <Compile Include="DynamicPlaceholders\SitecoreHelperExtension.cs" />
+    <Compile Include="DynamicPlaceholders\Pipelines\GetChromeData\GetDynamicPlaceholderChromeData.cs" />
+    <Compile Include="DynamicPlaceholders\Pipelines\GetPlaceholderRenderings\GetDynamicKeyAllowedRenderings.cs" />
+    <Compile Include="Extensions\ItemExtensions.cs" />
+    <Compile Include="Extensions\RenderingExtensions.cs" />
+    <Compile Include="Extensions\ScRepeaterExtensions.cs" />
+    <Compile Include="Extensions\SiteContextExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="FieldRendering\DateFieldRenderingString.cs" />
+    <Compile Include="FieldRendering\EmptyLinkFieldRenderingString.cs" />
+    <Compile Include="FieldRendering\IDateFieldRenderingString.cs" />
+    <Compile Include="FieldRendering\ILinkFieldRenderingString.cs" />
+    <Compile Include="FieldRendering\LinkFieldRenderingString.cs" />
+    <Compile Include="FieldRendering\LinkFieldStyle.cs" />
+    <Compile Include="Logging\SitecoreLogService.cs" />
+    <Compile Include="Mapping\ChildrenMapping\ChildrenMapAttribute.cs" />
+    <Compile Include="Mapping\ChildrenMapping\ChildrenMapper.cs" />
+    <Compile Include="Mapping\ChildrenMapping\ChildrenMapType.cs" />
+    <Compile Include="Mapping\DictionaryMapping\DictionaryMapAttribute.cs" />
+    <Compile Include="Mapping\DictionaryMapping\DictionaryMapper.cs" />
+    <Compile Include="Mapping\DictionaryMapping\IDictionaryMapping.cs" />
+    <Compile Include="Mapping\DictionaryMapping\StringDictionaryMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\BoolFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\DateFieldRenderingStringFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\DoubleFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\FieldMapAttribute.cs" />
+    <Compile Include="Mapping\FieldMapping\FieldMapper.cs" />
+    <Compile Include="Mapping\FieldMapping\FieldRenderingStringFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\FieldType.cs" />
+    <Compile Include="Mapping\FieldMapping\IFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\IntFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\LinkFieldRenderingStringFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\ListFieldMapper.cs" />
+    <Compile Include="Mapping\FieldMapping\MediaRenderingStringFieldMapping.cs" />
+    <Compile Include="Mapping\FieldMapping\StringFieldMapping.cs" />
+    <Compile Include="Mapping\IItemMapper.cs" />
+    <Compile Include="Mapping\IMapper.cs" />
+    <Compile Include="Mapping\IMappingAttribute.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\GuidItemPropertyMapping.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\IdItemPropertyMapping.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\IItemPropertyMapping.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\ItemPropertyMapAttribute.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\ItemPropertyMapper.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\StringItemPropertyMapping.cs" />
+    <Compile Include="Mapping\ItemPropertyMapping\ItemPropertyMappingType.cs" />
+    <Compile Include="Mapping\ITypeMapper.cs" />
+    <Compile Include="Mapping\MappingUtil.cs" />
+    <Compile Include="Mapping\Meta\ModelMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMetaBuilder.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\BasePropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\BoolPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\ChildMappingPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\DateFieldRenderingStringPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\DoublePropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\DynamicPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\FieldRenderingStringPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\GuidPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\IChildMappingPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\IdPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\IntPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\IPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\LinkFieldRenderingStringPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\MediaRenderingStringPropertyMeta.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\StringPropertyMeta.cs" />
+    <Compile Include="Mapping\ItemMapper.cs" />
+    <Compile Include="Mapping\RenderingParameterMapping\BoolRenderingParameterMapping.cs" />
+    <Compile Include="Mapping\RenderingParameterMapping\IntRenderingParameterMapping.cs" />
+    <Compile Include="Mapping\RenderingParameterMapping\IRenderingParameterMapping.cs" />
+    <Compile Include="Mapping\RenderingParameterMapping\RenderingParameterMapAttribute.cs" />
+    <Compile Include="Mapping\RenderingParameterMapping\RenderingParameterMapper.cs" />
+    <Compile Include="Mapping\RenderingParameterMapping\StringRenderingParameterMapping.cs" />
+    <Compile Include="Mvc\AdvancedModelLocator.cs" />
+    <Compile Include="Mvc\ContextRenderingModel.cs" />
+    <Compile Include="Mvc\ControllerFactory.cs" />
+    <Compile Include="Mvc\DataSourceRenderingModel.cs" />
+    <Compile Include="Mvc\ErrorHandling\ErrorRenderingModel.cs" />
+    <Compile Include="Mvc\ErrorHandling\ICustomErrorView.cs" />
+    <Compile Include="Mvc\ExtendedSitecoreHelper.cs" />
+    <Compile Include="Mvc\Forms\Constants.cs" />
+    <Compile Include="Mvc\Forms\SitecoreHelperExtensions.cs" />
+    <Compile Include="Mvc\Forms\ValidRenderingTokenAttribute.cs" />
+    <Compile Include="Mvc\HtmlExtensions.cs" />
+    <Compile Include="Mvc\ErrorHandling\IHideOnError.cs" />
+    <Compile Include="Mvc\MvcEditFrame.cs" />
+    <Compile Include="Mvc\MvcLink.cs" />
+    <Compile Include="Mvc\PaginatedCollectionExtensions.cs" />
+    <Compile Include="Mvc\PaginatedList.cs" />
+    <Compile Include="Mvc\PartialModel.cs" />
+    <Compile Include="Mvc\ErrorHandling\ExecuteRendererAndHideOnException.cs" />
+    <Compile Include="Mvc\PipelineProcessors\SetModelLocator.cs" />
+    <Compile Include="Mvc\PipelineProcessors\ResolveModelFromViewFile.cs" />
+    <Compile Include="Mvc\RenderingModel.cs" />
+    <Compile Include="FieldRendering\EmptyMediaRenderingString.cs" />
+    <Compile Include="FieldRendering\EmptyRenderingString.cs" />
+    <Compile Include="FieldRendering\FieldRenderingString.cs" />
+    <Compile Include="FieldRendering\IFieldRenderingString.cs" />
+    <Compile Include="FieldRendering\IMediaRenderingString.cs" />
+    <Compile Include="FieldRendering\MediaRenderingString.cs" />
+    <Compile Include="Mvc\SitecoreBaseController.cs" />
+    <Compile Include="Refactoring\LegacyCodeAttribute.cs" />
+    <Compile Include="Validators\ImageWidthHeightValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mvvm\Controls\ErrorWarning.cs" />
+    <Compile Include="Mvvm\IErrorWarning.cs" />
+    <Compile Include="Mvvm\IDataSourceWarning.cs" />
+    <Compile Include="Mvvm\IReactiveWarning.cs" />
+    <Compile Include="Mvvm\LayoutView.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mvvm\SublayoutView.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mvvm\ViewControlHelper.cs" />
+    <Compile Include="Mvvm\UserControlView.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Multisite\Workflow\ApplyWorkflowAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
