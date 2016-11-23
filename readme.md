@@ -40,7 +40,7 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 * Got an amazing idea to make Atlas better?
 * Found an annoying bug?
 
-Please don't hesitate to raise an issue through GitHub or open a pull request to show off your fancy pants coding skills - we'll really appreciate it!
+Please don't hesitate to raise an issue through GitHub or open a pull request to show off your fancy pants coding skills - we'll really appreciate it! Questions or other feedback - get in touch with the team via atlas@deloitte.com.au.
 
 ## Who is Deloitte Digital?
 
