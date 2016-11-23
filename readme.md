@@ -1,8 +1,16 @@
 ![Deloitte Digital](lib/logos/dd-logo.png)
 
 # Atlas - The Deloitte Digital Sitecore Framework
-Atlas is the Deloitte Digital Framework for Sitecore Development. 
+Atlas is the Deloitte Digital Framework for Sitecore Development. It consists of a collection of lightweight tools that can reduce development time and improve code quality in your CMS implementations.
 
+The features in Atlas include:
+- Sitecore ORM (maps Sitecore items to POCOs)
+- Field Rendering (a clean, fluid syntax for Experience Editor enabled mapped fields)
+- A structured approach to view renderings (adds consistency, reduces bugs)
+- An implementation for dynamic placeholders
+- Multi-site implementation helpers 
+
+For a full list of features and documentation on each, refer to the [wiki section of this repository](https://github.com/DeloitteDigitalAPAC/Atlas/wiki). 
 
 ## Getting Started
 
@@ -18,7 +26,8 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 
 #### Usage
 
-TODO
+- Install the NuGet package as outlined above
+- Enable the feature you want to use (refer to the [wiki](https://github.com/DeloitteDigitalAPAC/Atlas/wiki) for details) 
 
 ## Change log
 
@@ -31,7 +40,7 @@ TODO
 * Got an amazing idea to make Atlas better?
 * Found an annoying bug?
 
-Please don't hesitate to raise an issue through GitHub or open a pull request to show off your fancy pants coding skills - we'll really appreciate it!
+Please don't hesitate to raise an issue through GitHub or open a pull request to show off your fancy pants coding skills - we'll really appreciate it! Questions or other feedback - get in touch with the team via atlas@deloitte.com.au.
 
 ## Who is Deloitte Digital?
 
