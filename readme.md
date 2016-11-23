@@ -27,7 +27,7 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 #### Usage
 
 - Install the NuGet package as outlined above
-- Enable the feature you want to use (refer to the wiki for details) 
+- Enable the feature you want to use (refer to the [wiki](https://github.com/DeloitteDigitalAPAC/Atlas/wiki) for details) 
 
 ## Change log
 
