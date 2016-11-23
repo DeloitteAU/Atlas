@@ -31,7 +31,7 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 
 ## Change log
 
-`1.0.0-alpha1` - November 2015
+`1.0.0` - 23 November 2015
 
 * Migrate from DSF (Deloitte Sitecore Framework) 1.3.8 hosted internally to GitHub as DeloitteDigital.Atlas.
 
