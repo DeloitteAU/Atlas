@@ -1,5 +1,7 @@
 ![Deloitte Digital](lib/logos/dd-logo.png)
 
+[![NuGet](https://img.shields.io/nuget/v/DeloitteDigital.Atlas.svg)](https://www.nuget.org/packages/DeloitteDigital.Atlas)
+
 # Atlas - The Deloitte Digital Sitecore Framework
 Atlas is the Deloitte Digital Framework for Sitecore Development. It consists of a collection of lightweight tools that can reduce development time and improve code quality in your CMS implementations.
 
