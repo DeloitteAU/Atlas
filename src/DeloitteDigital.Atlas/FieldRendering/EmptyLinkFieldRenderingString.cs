@@ -49,11 +49,6 @@ namespace DeloitteDigital.Atlas.FieldRendering
             get { return string.Empty; }
         }
 
-        public ILinkFieldRenderingString AsButton(bool primary = true)
-        {
-            return this;
-        }
-
         public IFieldRenderingString WithAttribute(string attribute, object value)
         {
             return this;
