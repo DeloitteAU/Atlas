@@ -134,7 +134,6 @@
     <Compile Include="FieldRendering\IDateFieldRenderingString.cs" />
     <Compile Include="FieldRendering\ILinkFieldRenderingString.cs" />
     <Compile Include="FieldRendering\LinkFieldRenderingString.cs" />
-    <Compile Include="FieldRendering\LinkFieldStyle.cs" />
     <Compile Include="Logging\SitecoreLogService.cs" />
     <Compile Include="Mapping\ChildrenMapping\ChildrenMapAttribute.cs" />
     <Compile Include="Mapping\ChildrenMapping\ChildrenMapper.cs" />

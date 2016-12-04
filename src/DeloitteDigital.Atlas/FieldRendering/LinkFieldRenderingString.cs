@@ -10,19 +10,6 @@ namespace DeloitteDigital.Atlas.FieldRendering
     public class LinkFieldRenderingString : FieldRenderingString, ILinkFieldRenderingString
     {
         /// <summary>
-        /// The link field style.
-        /// </summary>
-        private static LinkFieldStyle linkFieldStyle;
-
-        /// <summary>
-        /// Initializes static members of the <see cref="LinkFieldRenderingString"/> class.
-        /// </summary>
-        static LinkFieldRenderingString()
-        {
-            linkFieldStyle = ServiceLocator.Current.GetInstance<LinkFieldStyle>() ?? LinkFieldStyle.Default;
-        }
-
-        /// <summary>
         /// Initializes a new instance of the LinkFieldRenderingString class
         /// </summary>
         /// <param name="item">Sitecore item</param>
@@ -37,18 +24,6 @@ namespace DeloitteDigital.Atlas.FieldRendering
         /// Gets or sets the link field.
         /// </summary>
         public LinkField LinkField { get; set; }
-
-        /// <summary>
-        /// Gets the link field styled as a button
-        /// </summary>
-        /// <param name="primary">Whether the button is primary.</param>
-        /// <returns>
-        /// The <see cref="ILinkFieldRenderingString"/> styled as a button
-        /// </returns>
-        public ILinkFieldRenderingString AsButton(bool primary = true)
-        {
-            return (ILinkFieldRenderingString)this.WithAttribute("class", primary ? linkFieldStyle.PrimaryButtonClass : linkFieldStyle.SecondaryButtonClass);
-        }
 
         /// <summary>
         /// Gets the URL only
