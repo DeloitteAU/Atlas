@@ -90,10 +90,10 @@ namespace DeloitteDigital.Atlas.Extensions
         {
             bool value;
             var stringValue = nvc[key];
-            if (Boolean.TryParse(stringValue, out value))
+            if (bool.TryParse(stringValue, out value))
                 return value;
 
-            if (String.IsNullOrEmpty(stringValue))
+            if (string.IsNullOrEmpty(stringValue))
                 return null;
 
             stringValue = stringValue.ToLowerInvariant();

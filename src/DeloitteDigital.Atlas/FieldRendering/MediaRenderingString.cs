@@ -38,7 +38,7 @@ namespace DeloitteDigital.Atlas.FieldRendering
             }
             else
             {
-                return String.Empty;
+                return string.Empty;
             }
         }
 

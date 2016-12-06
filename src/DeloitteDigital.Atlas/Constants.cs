@@ -1,4 +1,4 @@
-﻿namespace DD.Atlas
+﻿namespace DeloitteDigital.Atlas
 {
     public static class Constants
     {

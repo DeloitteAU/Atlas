@@ -1,5 +1,4 @@
 ﻿using System;
-using DD.Atlas;
 using DeloitteDigital.Atlas.Caching;
 using DeloitteDigital.Atlas.FieldRendering;
 using DeloitteDigital.Atlas.Logging;
@@ -24,7 +23,7 @@ namespace DeloitteDigital.Atlas.Mvc
         {
             get
             {
-                return String.Format("{0}{1}",
+                return string.Format("{0}{1}",
                     this.Rendering.RenderingItem.Name.Replace(" ", "_"),
                     this.Rendering.UniqueId.ToString().Substring(0, 6));
             }

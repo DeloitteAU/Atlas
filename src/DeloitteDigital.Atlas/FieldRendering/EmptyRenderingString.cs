@@ -7,7 +7,7 @@ namespace DeloitteDigital.Atlas.FieldRendering
     /// </summary>
     public class EmptyRenderingString : IFieldRenderingString
     {
-        private string emptyStringValue = String.Empty;
+        private string emptyStringValue = string.Empty;
 
         public EmptyRenderingString() { }
 
