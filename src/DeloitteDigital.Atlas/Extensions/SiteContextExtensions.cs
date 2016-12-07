@@ -2,7 +2,6 @@
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Sites;
-using Constants = DD.Atlas.Constants;
 
 namespace DeloitteDigital.Atlas.Extensions
 {
