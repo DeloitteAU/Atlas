@@ -36,7 +36,7 @@ namespace DeloitteDigital.Atlas.Mapping
 
             return model;
         }
-        
+
         public TModel Map<TModel>(Item from)
         {
             var model = Activator.CreateInstance<TModel>();
@@ -55,26 +55,28 @@ namespace DeloitteDigital.Atlas.Mapping
         {
             var modelType = typeof(TModel);
             var modelMetaKey = modelType.AssemblyQualifiedName;
-            var modelMeta = default(ModelMeta);
+            ModelMeta tmp = null;
 
-            if (metadataDictionary.ContainsKey(modelMetaKey))
+            if (metadataDictionary.TryGetValue(modelMetaKey, out tmp))
             {
-                modelMeta = metadataDictionary[modelMetaKey];
+                return tmp;
             }
-            else
+
+            lock (MetaSyncRoot)
             {
-                lock (MetaSyncRoot)
+                if (metadataDictionary.TryGetValue(modelMetaKey, out tmp))
                 {
-                    if (!metadataDictionary.ContainsKey(modelMetaKey))
-                    {
-                        modelMeta = new ModelMeta();
-                        var propertyMetaBuilder = new PropertyMetaBuilder();
-                        modelMeta.PropertyMap = propertyMetaBuilder.BuildPropertyMetaMap<TModel>();
-                        metadataDictionary.Add(modelMetaKey, modelMeta);
-                    }
+                    return tmp;
                 }
+
+                var modelMeta = new ModelMeta();
+                var propertyMetaBuilder = new PropertyMetaBuilder();
+
+                modelMeta.PropertyMap = propertyMetaBuilder.BuildPropertyMetaMap<TModel>();
+                metadataDictionary.Add(modelMetaKey, modelMeta);
+
+                return modelMeta;
             }
-            return modelMeta;
         }
 
         private IDictionary<string, ModelMeta> EnsureMetaDictionaryExists()
