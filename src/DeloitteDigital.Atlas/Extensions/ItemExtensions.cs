@@ -14,7 +14,7 @@ using Sitecore.Web.UI.WebControls;
 
 namespace DeloitteDigital.Atlas.Extensions
 {
-   
+
     /// <summary>
     /// Provides extension methods on the Sitecore.Data.Items.Item type
     /// </summary>
@@ -165,14 +165,11 @@ namespace DeloitteDigital.Atlas.Extensions
 
         public static Item GetFieldValueAsItem(this Item item, string fieldName)
         {
-            using (new SecurityDisabler())
-            {
-                var fieldValue = item.GetFieldValue(fieldName);
+            var fieldValue = item.GetFieldValue(fieldName);
 
-                return string.IsNullOrEmpty(fieldValue)
-                    ? null
-                    : item.Database.GetItem(fieldValue);
-            }
+            return string.IsNullOrEmpty(fieldValue)
+                ? null
+                : item.Database.GetItem(fieldValue);
         }
 
         public static DateTime? GetDateTime(this Item item, string fieldName)
