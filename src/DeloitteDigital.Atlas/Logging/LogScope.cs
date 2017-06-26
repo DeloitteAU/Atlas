@@ -52,8 +52,6 @@ namespace DeloitteDigital.Atlas.Logging
             var result = $"Starting {LogExtensions.GetFullTypeName(callerMemberName, callerTypeName)} {message}";
 
             Log(result);
-
-            Debug.WriteLine(result);
         }
 
         private void End(string callerMemberName = "", string callerTypeName = "", string message = "")
@@ -61,8 +59,6 @@ namespace DeloitteDigital.Atlas.Logging
             var logMessage = $"Completed {LogExtensions.GetFullTypeName(callerMemberName, callerTypeName)} {message}";
 
             Log(logMessage);
-
-            Debug.WriteLine(logMessage);
         }
 
         private void Log(string message)
