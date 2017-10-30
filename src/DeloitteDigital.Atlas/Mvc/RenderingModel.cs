@@ -106,7 +106,8 @@ namespace DeloitteDigital.Atlas.Mvc
 
                 try
                 {
-                    logService = ServiceLocator.Current.GetInstance<ILogService>();
+                    //logService = ServiceLocator.Current.GetInstance<ILogService>();
+                    logService = (ILogService)Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ILogService));
                 }
                 catch (Exception) { } // the ILogService interface has not been configured
 

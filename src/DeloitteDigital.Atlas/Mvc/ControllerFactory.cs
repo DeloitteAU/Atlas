@@ -36,7 +36,8 @@ namespace DeloitteDigital.Atlas.Mvc
             try
             {
                 // Create an instance from the controller type and resolve its dependencies
-                controller = ServiceLocator.Current.GetService(controllerType) as IController;
+                //controller = ServiceLocator.Current.GetService(controllerType) as IController;
+                controller = Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(controllerType) as IController;
             }
             catch (Exception ex)
             {

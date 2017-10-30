@@ -39,7 +39,8 @@ namespace DeloitteDigital.Atlas.Mvc.ErrorHandling
 
                 try
                 {
-                    var logService = ServiceLocator.Current.GetInstance<ILogService>();
+                    //var logService = ServiceLocator.Current.GetInstance<ILogService>();
+                    var logService = (ILogService) Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ILogService));
                     logService.Error($"Error rendering {args.Rendering.Renderer}", ex, this);
                 }
                 catch (Exception) { } // the ILogService interface has not been configured
