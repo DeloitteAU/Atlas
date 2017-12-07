@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Microsoft.Practices.ServiceLocation;
 using Sitecore.Mvc.Helpers;
 using Sitecore.Mvc.Presentation;
 
@@ -45,7 +44,6 @@ namespace DeloitteDigital.Atlas.Mvc
             }
 
             // Get model instance from service location and resolve the instance's dependencies
-            //var modelObject = ServiceLocator.Current.GetInstance(modelType);
             var modelObject = Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(modelType);
 
             if (modelObject != null || !throwOnTypeCreationError)
