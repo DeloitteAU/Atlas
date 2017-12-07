@@ -24,13 +24,15 @@ namespace DeloitteDigital.Atlas.Caching
 
         public static void ClearCache(string siteName, string databaseName)
         {
-            var cache = ServiceLocator.Current.GetInstance<ICacheService>();
+            //var cache = ServiceLocator.Current.GetInstance<ICacheService>();
+            var cache = (ICacheService) Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ICacheService));
             cache.ClearCache(siteName, databaseName);
         }
 
         public static void ClearItemsWithPublishDependancy(string siteName, string databaseName)
         {
-            var cache = ServiceLocator.Current.GetInstance<ICacheService>();
+            //var cache = ServiceLocator.Current.GetInstance<ICacheService>();
+            var cache = (ICacheService)Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ICacheService));
             cache.ClearItemsWithPublishDependency(siteName, databaseName);
         }
     }

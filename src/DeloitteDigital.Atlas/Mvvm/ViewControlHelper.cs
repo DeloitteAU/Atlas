@@ -70,7 +70,8 @@ namespace DeloitteDigital.Atlas.Mvvm
         /// <returns>Service instance</returns>
         public TService ResolveService<TService>()
         {
-            return ServiceLocator.Current.GetInstance<TService>();
+            //return ServiceLocator.Current.GetInstance<TService>();
+            return (TService) Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(TService));
         }
 
         /// <summary>
