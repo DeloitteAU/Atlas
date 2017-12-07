@@ -74,7 +74,7 @@ namespace DeloitteDigital.Atlas.Extensions
                 return uri.GetPathWithoutQuery();
             }
 
-            return String.Empty;
+            return string.Empty;
         }
 
         /// <summary>
@@ -97,28 +97,28 @@ namespace DeloitteDigital.Atlas.Extensions
         /// <param name="delimiter">The String to delimit the key/value pairs</param>
         /// <param name="omitEmpty"></param>
         /// <returns>A key/value structured query string, delimited by the specified String</returns>
-        public static string ToQueryString(this NameValueCollection parameters, String delimiter, Boolean omitEmpty)
+        public static string ToQueryString(this NameValueCollection parameters, string delimiter, bool omitEmpty)
         {
-            if (String.IsNullOrEmpty(delimiter))
+            if (string.IsNullOrEmpty(delimiter))
                 delimiter = "&";
 
             const char equals = '=';
             if (parameters != null && parameters.Count > 0)
             {
-                var items = new List<String>();
+                var items = new List<string>();
                 for (int i = 0; i < parameters.Count; i++)
                 {
-                    foreach (String value in parameters.GetValues(i))
+                    foreach (string value in parameters.GetValues(i))
                     {
-                        Boolean addValue = !(omitEmpty) || !String.IsNullOrEmpty(value);
+                        bool addValue = !(omitEmpty) || !string.IsNullOrEmpty(value);
                         if (addValue)
-                            items.Add(String.Concat(parameters.GetKey(i), equals, HttpUtility.UrlEncode(value)));
+                            items.Add(string.Concat(parameters.GetKey(i), equals, HttpUtility.UrlEncode(value)));
                     }
                 }
-                return String.Join(delimiter, items.ToArray());
+                return string.Join(delimiter, items.ToArray());
             }
 
-            return String.Empty;
+            return string.Empty;
         }
     }
 }

@@ -14,9 +14,9 @@ using Sitecore.Web.UI.WebControls;
 
 namespace DeloitteDigital.Atlas.Extensions
 {
-   
+
     /// <summary>
-    /// Provides extention methods on the Sitecore.Data.Items.Item type
+    /// Provides extension methods on the Sitecore.Data.Items.Item type
     /// </summary>
     public static class ItemExtensions
     {
@@ -37,15 +37,15 @@ namespace DeloitteDigital.Atlas.Extensions
                 fieldRenderer.FieldName = fieldName;
                 if (attributes != null)
                 {
-                    fieldRenderer.Parameters = String.Join("&",
-                        attributes.Keys.Select(k => String.Format("{0}={1}", k, attributes[k])));
+                    fieldRenderer.Parameters = string.Join("&",
+                        attributes.Keys.Select(k => string.Format("{0}={1}", k, attributes[k])));
                 }
                 return fieldRenderer.Render();
             }
             else
             {
                 var field = item.Fields[fieldName];
-                return field != null ? field.Value : String.Empty;
+                return field != null ? field.Value : string.Empty;
             }
         }
 
@@ -74,16 +74,16 @@ namespace DeloitteDigital.Atlas.Extensions
 
         public static string GetItemUrl(this Item item, string siteName = "", string hostName = "")
         {
-            if (String.IsNullOrEmpty(siteName))
+            if (string.IsNullOrEmpty(siteName))
             {
                 return LinkManager.GetItemUrl(item);
             }
             else
             {
-                var itemUrl = String.Empty;
+                var itemUrl = string.Empty;
                 var originalSiteName = Context.Site.Name;
                 Context.SetActiveSite(siteName);
-                itemUrl = String.Format("//{0}{1}", hostName, LinkManager.GetItemUrl(item));
+                itemUrl = string.Format("//{0}{1}", hostName, LinkManager.GetItemUrl(item));
                 Context.SetActiveSite(originalSiteName);
                 return itemUrl;
             }
@@ -97,7 +97,7 @@ namespace DeloitteDigital.Atlas.Extensions
 
         public static string GetFieldValueAsDateTime(this Item item, string fieldName, string format = "")
         {
-            if (String.IsNullOrEmpty(format))
+            if (string.IsNullOrEmpty(format))
             {
                 format = "dd MMM yyyy";
             }
@@ -120,7 +120,7 @@ namespace DeloitteDigital.Atlas.Extensions
             }
             else
             {
-                return String.Empty;
+                return string.Empty;
             }
         }
 
@@ -139,7 +139,7 @@ namespace DeloitteDigital.Atlas.Extensions
                 }
             }
 
-            return String.Empty;
+            return string.Empty;
         }
 
         public static Item GetLinkFieldItem(this Item item, string fieldName)
@@ -165,14 +165,11 @@ namespace DeloitteDigital.Atlas.Extensions
 
         public static Item GetFieldValueAsItem(this Item item, string fieldName)
         {
-            using (new SecurityDisabler())
-            {
-                var fieldValue = item.GetFieldValue(fieldName);
+            var fieldValue = item.GetFieldValue(fieldName);
 
-                return string.IsNullOrEmpty(fieldValue)
-                    ? null
-                    : item.Database.GetItem(fieldValue);
-            }
+            return string.IsNullOrEmpty(fieldValue)
+                ? null
+                : item.Database.GetItem(fieldValue);
         }
 
         public static DateTime? GetDateTime(this Item item, string fieldName)

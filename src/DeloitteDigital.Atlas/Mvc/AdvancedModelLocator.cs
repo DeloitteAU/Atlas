@@ -40,7 +40,7 @@ namespace DeloitteDigital.Atlas.Mvc
                 }
 
                 throw new InvalidOperationException(
-                    String.Format("Could not locate type '{0}'. Model reference: '{1}'", 
+                    string.Format("Could not locate type '{0}'. Model reference: '{1}'", 
                         (object)typeName, (object)model));
             }
 
@@ -53,7 +53,7 @@ namespace DeloitteDigital.Atlas.Mvc
             }
 
             throw new InvalidOperationException(
-                String.Format("Could not create a model object of type '{0}'. Model reference: '{1}'", 
+                string.Format("Could not create a model object of type '{0}'. Model reference: '{1}'", 
                     (object)typeName, (object)model));
         }
     }

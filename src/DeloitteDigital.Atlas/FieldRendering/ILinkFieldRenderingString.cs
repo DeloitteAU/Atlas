@@ -14,15 +14,6 @@ namespace DeloitteDigital.Atlas.FieldRendering
         string Url { get; }
 
         /// <summary>
-        /// Gets the link field styled as a button
-        /// </summary>
-        /// <param name="primary">Whether the button is primary.</param>
-        /// <returns>
-        /// The <see cref="ILinkFieldRenderingString"/> styled as a button
-        /// </returns>
-        ILinkFieldRenderingString AsButton(bool primary = true);
-
-        /// <summary>
         /// Gets the target.
         /// </summary>
         string Target { get; }

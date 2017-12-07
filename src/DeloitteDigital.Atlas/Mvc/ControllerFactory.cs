@@ -24,13 +24,13 @@ namespace DeloitteDigital.Atlas.Mvc
 
             // Controller not found
             if (controllerType == null)
-                throw new HttpException(404, String.Format(
+                throw new HttpException(404, string.Format(
                     "The controller for path '{0}' could not be found or it does not implement IController.",
                     reqContext.HttpContext.Request.Path));
 
             // Controller type does not implement IController interface
             if (!typeof(IController).IsAssignableFrom(controllerType))
-                throw new ArgumentException(String.Format(
+                throw new ArgumentException(string.Format(
                     "Type requested is not a controller: {0}", controllerType.Name),
                     "controllerType");
             try
@@ -40,7 +40,7 @@ namespace DeloitteDigital.Atlas.Mvc
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException(String.Format(
+                throw new InvalidOperationException(string.Format(
                     "Error resolving controller {0}", controllerType.Name), ex);
             }
 
