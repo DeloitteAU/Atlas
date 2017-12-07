@@ -33,6 +33,13 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 
 ## Change log
 
+`1.0.1` - 7 December 2017
+
+* Add synchronisation around initial model mapping to resolve potential race condition ([issue #7](https://github.com/DeloitteDigitalAPAC/Atlas/issues/7))
+* Remove usage of a SecurityDisabler within the GetFieldValueAsItem() extension method ([issue #11](https://github.com/DeloitteDigitalAPAC/Atlas/issues/11))
+* Remove unnecessary logging ([issue #8](https://github.com/DeloitteDigitalAPAC/Atlas/issues/8))
+* Remove LinkFieldStyle class from framework as it is not a particularly reusable component ([issue #2](https://github.com/DeloitteDigitalAPAC/Atlas/issues/2))
+
 `1.0.0` - 23 November 2016
 
 * Migrate from DSF (Deloitte Sitecore Framework) 1.3.8 hosted internally to GitHub as DeloitteDigital.Atlas.
