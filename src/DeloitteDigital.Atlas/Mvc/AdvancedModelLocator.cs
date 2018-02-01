@@ -46,9 +46,18 @@ namespace DeloitteDigital.Atlas.Mvc
             // Get model instance from service location and resolve the instance's dependencies
             var modelObject = Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(modelType);
 
-            if (modelObject != null || !throwOnTypeCreationError)
+            if (modelObject != null)
             {
                 return modelObject;
+            }
+            else
+            {
+                // attempt using TypeHelper for Sitecore's own models 
+                modelObject = TypeHelper.CreateObject(modelType);
+                if (modelObject != null || !throwOnTypeCreationError)
+                {
+                    return modelObject;
+                }
             }
 
             throw new InvalidOperationException(
