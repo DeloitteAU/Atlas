@@ -1,4 +1,5 @@
 ﻿using Sitecore.Data.Items;
+using Sitecore.Resources.Media;
 
 namespace DeloitteDigital.Atlas.FieldRendering
 {
@@ -12,6 +13,18 @@ namespace DeloitteDigital.Atlas.FieldRendering
         /// </summary>
         /// <returns>The field's media url</returns>
         string UrlOnly();
+
+        /// <summary>
+        /// Instructs the renderer to render the medial URL with default options
+        /// </summary>
+        /// <returns>The field's media URL</returns>
+        string Url();
+
+        /// <summary>
+        /// Instructs the renderer to render the medial URL with specified url options
+        /// </summary>
+        /// <returns>The field's media URL</returns>
+        string Url(MediaUrlOptions mediaUrlOptions);
 
         /// <summary>
         /// Scales the image size by a specified percentage

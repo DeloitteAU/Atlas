@@ -1,4 +1,6 @@
-﻿using Sitecore.Data.Items;
+﻿using System;
+using Sitecore.Data.Items;
+using Sitecore.Resources.Media;
 
 namespace DeloitteDigital.Atlas.FieldRendering
 {
@@ -7,7 +9,18 @@ namespace DeloitteDigital.Atlas.FieldRendering
     /// </summary>
     public class EmptyMediaRenderingString : IMediaRenderingString
     {
+        [Obsolete("This method is obsolete. Please use Url() or Url(MediaOptions) instead")]
         public string UrlOnly()
+        {
+            return string.Empty;
+        }
+
+        public string Url()
+        {
+            return string.Empty;
+        }
+
+        public string Url(MediaUrlOptions mediaUrlOptions)
         {
             return string.Empty;
         }
