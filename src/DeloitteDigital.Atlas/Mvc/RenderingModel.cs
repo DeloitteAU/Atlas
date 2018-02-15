@@ -3,7 +3,6 @@ using DeloitteDigital.Atlas.Caching;
 using DeloitteDigital.Atlas.FieldRendering;
 using DeloitteDigital.Atlas.Logging;
 using DeloitteDigital.Atlas.Mapping;
-using Microsoft.Practices.ServiceLocation;
 using Sitecore;
 using Sitecore.Data.Items;
 using Sitecore.Mvc.Presentation;
@@ -102,13 +101,16 @@ namespace DeloitteDigital.Atlas.Mvc
             }
             catch (Exception ex)
             {
-                var logService = default(ILogService);
+                ILogService logService = null;
 
                 try
                 {
-                    logService = ServiceLocator.Current.GetInstance<ILogService>();
+                    logService = (ILogService)Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ILogService));
                 }
-                catch (Exception) { } // the ILogService interface has not been configured
+                catch
+                {
+                    // The ILogService interface has not been configured - can't log
+                }
 
                 if (logService != null)
                 {

@@ -1,5 +1,4 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using Sitecore.Data.Fields;
+﻿using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 
 namespace DeloitteDigital.Atlas.FieldRendering

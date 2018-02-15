@@ -33,6 +33,10 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 
 ## Change log
 
+`1.1.0` - 7 December 2017
+
+* Replace CommonServiceLocator with n Sitecore.DependencyInjection.ServiceLocator - note that this now requires Sitecore 8.2+
+
 `1.0.1` - 7 December 2017
 
 * Add synchronisation around initial model mapping to resolve potential race condition ([issue #7](https://github.com/DeloitteDigitalAPAC/Atlas/issues/7))

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Practices.ServiceLocation;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.GetRenderingDatasource;
 
@@ -13,7 +12,10 @@ namespace DeloitteDigital.Atlas.Multisite.Datasource
         public GetDatasourceLocationFromProviders()
         {
             // TODO - get all instances doesn't appear to work... 
-            _providers = new List<IDatasourceProvider> { ServiceLocator.Current.GetInstance<IDatasourceProvider>() };
+            _providers = new List<IDatasourceProvider>
+            {
+                (IDatasourceProvider) Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(IDatasourceProvider))
+            };
         }
 
         public void Process(GetRenderingDatasourceArgs args)

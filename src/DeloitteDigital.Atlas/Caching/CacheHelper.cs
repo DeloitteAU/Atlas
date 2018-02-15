@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Practices.ServiceLocation;
 
 namespace DeloitteDigital.Atlas.Caching
 {
@@ -9,28 +8,27 @@ namespace DeloitteDigital.Atlas.Caching
         /// Ensure we are only on web sitecore database
         /// </summary>
         /// <remarks>
-        /// We only support caching against the web database
-        /// core, master and others which may happen from a sitecore event handler or indexing
-        /// are just too difficult to track
+        /// We only support caching against the web database. Other databases like core or master may have 
+        /// interactiosn triggered from a Sitecore event handler or indexing which are too difficult to track.
         /// </remarks>
-        /// <returns></returns>
+        /// <returns>True if running against the web database, otherwise false.</returns>
         public static bool EnsureWebDatabase()
         {
-            if (Sitecore.Context.Database == null) return false;
-            if (Sitecore.Context.Database.Name.Equals("web", StringComparison.OrdinalIgnoreCase)) return true;
+            if (Sitecore.Context.Database == null)
+                return false;
 
-            return false;
+            return Sitecore.Context.Database.Name.Equals("web", StringComparison.OrdinalIgnoreCase);
         }
 
         public static void ClearCache(string siteName, string databaseName)
         {
-            var cache = ServiceLocator.Current.GetInstance<ICacheService>();
+            var cache = (ICacheService) Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ICacheService));
             cache.ClearCache(siteName, databaseName);
         }
 
         public static void ClearItemsWithPublishDependancy(string siteName, string databaseName)
         {
-            var cache = ServiceLocator.Current.GetInstance<ICacheService>();
+            var cache = (ICacheService)Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(ICacheService));
             cache.ClearItemsWithPublishDependency(siteName, databaseName);
         }
     }

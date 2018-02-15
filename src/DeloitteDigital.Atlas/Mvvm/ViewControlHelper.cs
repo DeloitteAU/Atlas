@@ -1,6 +1,5 @@
 ﻿using System.Web.UI;
 using DeloitteDigital.Atlas.Logging;
-using Microsoft.Practices.ServiceLocation;
 using Sitecore.Data.Items;
 using Sitecore.Web.UI.WebControls;
 
@@ -70,7 +69,7 @@ namespace DeloitteDigital.Atlas.Mvvm
         /// <returns>Service instance</returns>
         public TService ResolveService<TService>()
         {
-            return ServiceLocator.Current.GetInstance<TService>();
+            return (TService) Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(typeof(TService));
         }
 
         /// <summary>

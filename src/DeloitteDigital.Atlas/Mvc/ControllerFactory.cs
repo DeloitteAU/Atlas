@@ -2,7 +2,6 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Microsoft.Practices.ServiceLocation;
 
 namespace DeloitteDigital.Atlas.Mvc
 {
@@ -36,7 +35,7 @@ namespace DeloitteDigital.Atlas.Mvc
             try
             {
                 // Create an instance from the controller type and resolve its dependencies
-                controller = ServiceLocator.Current.GetService(controllerType) as IController;
+                controller = Sitecore.DependencyInjection.ServiceLocator.ServiceProvider.GetService(controllerType) as IController;
             }
             catch (Exception ex)
             {
