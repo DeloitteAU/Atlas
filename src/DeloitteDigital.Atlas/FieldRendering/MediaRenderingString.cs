@@ -20,20 +20,35 @@ namespace DeloitteDigital.Atlas.FieldRendering
         }
 
         /// <summary>
-        /// Instructs the renderer to render the media URL only, not the image control or page editor control
+        /// Instructs the renderer to render the media URL only, not the image control or page editor control.
+        /// This method will not respect the .ashx setting in the Sitecore configuration
         /// </summary>
         /// <returns>The field's media url</returns>
+        [Obsolete("This method is obsolete. Please use Url() or Url(MediaOptions) instead")]
         public string UrlOnly()
         {
-            var imageField = (Sitecore.Data.Fields.ImageField)this.Item.Fields[this.FieldName];
+            return Url(MediaUrlOptions.GetShellOptions());
+        }
 
-            if (imageField != null && imageField.MediaItem != null)
+        /// <summary>
+        /// Instructs the render to render the media URL only using the default Sitecore Media URL rendering options
+        /// </summary>
+        public string Url()
+        {
+            return Url(new MediaUrlOptions());
+        }
+
+        /// <summary>
+        /// Instructs the render to render the media URL only using the provided media url options
+        /// </summary>
+        public string Url(MediaUrlOptions mediaUrlOptions)
+        {
+            var imageField = (Sitecore.Data.Fields.ImageField)Item.Fields[FieldName];
+
+            if (imageField?.MediaItem != null)
             {
-                // TODO: add support for more media option attributes, for UrlOnly rendering                
-                ////var mediaUrlOptions = MediaUrlOptions.GetThumbnailOptions(imageField.MediaItem);
-                var mediaUrlOptions = MediaUrlOptions.GetShellOptions();
-                mediaUrlOptions.Width = this.Attributes.ContainsKey("width") ? (int)this.Attributes["width"] : mediaUrlOptions.Width;
-                mediaUrlOptions.Height = this.Attributes.ContainsKey("height") ? (int)this.Attributes["height"] : mediaUrlOptions.Height;
+                mediaUrlOptions.Width = Attributes.ContainsKey("width") ? (int)Attributes["width"] : mediaUrlOptions.Width;
+                mediaUrlOptions.Height = Attributes.ContainsKey("height") ? (int)Attributes["height"] : mediaUrlOptions.Height;
                 return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlOptions);
             }
             else
