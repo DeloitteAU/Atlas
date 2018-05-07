@@ -114,6 +114,8 @@
     <Compile Include="Logging\LogExtensions.cs" />
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Logging\LogScope.cs" />
+    <Compile Include="Mapping\FieldMapping\DecimalFieldMapping.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\DecimalPropertyMeta.cs" />
     <Compile Include="Multisite\Datasource\ConventionBasedDatasourceProvider.cs" />
     <Compile Include="Multisite\Datasource\GetDatasourceLocationFromProviders.cs" />
     <Compile Include="Multisite\Datasource\IDataSourceProvider.cs" />
