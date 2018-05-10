@@ -47,5 +47,10 @@ namespace DeloitteDigital.Atlas.FieldRendering
         /// Gets or sets the link field.
         /// </summary>
         LinkField LinkField { get; }
+
+        /// <summary>
+        /// Gets the query string
+        /// </summary>
+        string QueryString { get; }
     }
 }

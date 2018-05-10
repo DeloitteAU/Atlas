@@ -78,5 +78,10 @@ namespace DeloitteDigital.Atlas.FieldRendering
         {
             get { return string.Empty; }
         }
+
+        public string QueryString
+        {
+            get { return string.Empty; }
+        }
     }
 }
