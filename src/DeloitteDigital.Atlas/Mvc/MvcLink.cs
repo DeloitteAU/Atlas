@@ -16,11 +16,11 @@ namespace DeloitteDigital.Atlas.Mvc
         private readonly ViewContext viewContext;
         private readonly TagBuilder tagBuilder;
 
-        public MvcLink(ViewContext viewContext, ILinkFieldRenderingString linkField, string alternateTag)
+        public MvcLink(ViewContext viewContext, ILinkFieldRenderingString linkField, string alternateTag, string linkTagClass = null)
         {
             this.viewContext = viewContext;
 
-            if (linkField?.Url != null)
+            if (!string.IsNullOrWhiteSpace(linkField?.Url))
             {
                 // link given - render an anchor tag
                 this.tagBuilder = new TagBuilder("a");
@@ -28,12 +28,15 @@ namespace DeloitteDigital.Atlas.Mvc
                 // add optional attributes
                 if (!string.IsNullOrWhiteSpace(linkField.Target))
                     this.tagBuilder.Attributes.Add("target", linkField.Target);
-                if (!string.IsNullOrWhiteSpace(linkField.Class))
-                    this.tagBuilder.Attributes.Add("class", linkField.Class);
                 if (!string.IsNullOrWhiteSpace(linkField.Description))
                     this.tagBuilder.Attributes.Add("title", linkField.Description);
+
+                if (!string.IsNullOrWhiteSpace(linkField.Class))
+                    this.tagBuilder.Attributes.Add("class", linkField.Class);
+                else if (!string.IsNullOrWhiteSpace(linkTagClass))
+                    this.tagBuilder.Attributes.Add("class", linkTagClass);
             }
-            else if (string.IsNullOrWhiteSpace(alternateTag))
+            else if (!string.IsNullOrWhiteSpace(alternateTag))
             {
                 // no link given - render the alternate tag if provided
                 this.tagBuilder = new TagBuilder(alternateTag);
