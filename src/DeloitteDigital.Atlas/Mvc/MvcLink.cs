@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using DeloitteDigital.Atlas.FieldRendering;
 
@@ -31,7 +32,15 @@ namespace DeloitteDigital.Atlas.Mvc
                 if (!string.IsNullOrWhiteSpace(linkField.Description))
                     this.tagBuilder.Attributes.Add("title", linkField.Description);
 
-                if (!string.IsNullOrWhiteSpace(linkField.Class))
+                if (!string.IsNullOrWhiteSpace(linkField.Class) && !string.IsNullOrWhiteSpace(linkTagClass))
+                {
+                    var classes = new HashSet<string>();
+                    foreach (var linkClass in linkField.Class.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+                        classes.Add(linkClass);
+                    foreach (var tagClass in linkTagClass.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+                        classes.Add(tagClass);
+                    this.tagBuilder.Attributes.Add("class", string.Join(" ", classes));
+                } else if (!string.IsNullOrWhiteSpace(linkField.Class))
                     this.tagBuilder.Attributes.Add("class", linkField.Class);
                 else if (!string.IsNullOrWhiteSpace(linkTagClass))
                     this.tagBuilder.Attributes.Add("class", linkTagClass);
