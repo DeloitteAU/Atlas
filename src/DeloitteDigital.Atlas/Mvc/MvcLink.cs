@@ -40,7 +40,8 @@ namespace DeloitteDigital.Atlas.Mvc
                     foreach (var tagClass in linkTagClass.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
                         classes.Add(tagClass);
                     this.tagBuilder.Attributes.Add("class", string.Join(" ", classes));
-                } else if (!string.IsNullOrWhiteSpace(linkField.Class))
+                }
+                else if (!string.IsNullOrWhiteSpace(linkField.Class))
                     this.tagBuilder.Attributes.Add("class", linkField.Class);
                 else if (!string.IsNullOrWhiteSpace(linkTagClass))
                     this.tagBuilder.Attributes.Add("class", linkTagClass);
