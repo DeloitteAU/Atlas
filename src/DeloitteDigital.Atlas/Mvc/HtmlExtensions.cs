@@ -18,11 +18,13 @@ namespace DeloitteDigital.Atlas.Mvc
             return frame;
         }        
 
-        public static IDisposable BeginLink(this HtmlHelper htmlHelper, ILinkFieldRenderingString linkField, string alternateTag = null, bool skipInPageEditor = false)
+        public static IDisposable BeginLink(this HtmlHelper htmlHelper, ILinkFieldRenderingString linkField, string alternateTag = null, bool skipInPageEditor = false, bool alternateTagInPageEditor = false, string linkTagClass = null)
         {
             if (skipInPageEditor && global::Sitecore.Context.PageMode.IsExperienceEditor)
                 return new EmptyMvcLink();
-            return new MvcLink(htmlHelper.ViewContext, linkField, alternateTag);
+            if (alternateTagInPageEditor && global::Sitecore.Context.PageMode.IsExperienceEditor)
+                return new MvcLink(htmlHelper.ViewContext, null, alternateTag, linkTagClass);
+            return new MvcLink(htmlHelper.ViewContext, linkField, alternateTag, linkTagClass);
         }
     }
 }
