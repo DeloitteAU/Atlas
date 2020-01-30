@@ -22,7 +22,7 @@ namespace DeloitteDigital.Atlas.Tests.Mapping
                 Assert.AreEqual(new ID("{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}"), sampleItem.ItemId);
                 Assert.AreEqual("Home", sampleItem.ItemName);
                 Assert.AreEqual("/sitecore/content/Home", sampleItem.ItemPath);
-                Assert.AreEqual("/en/sitecore/content/Home.aspx", sampleItem.ItemUrl);
+                Assert.AreEqual("/en/sitecore/content/Home", sampleItem.ItemUrl);
                 Assert.AreEqual(new ID("{76036F5E-CBCE-46D1-AF0A-4143F9B557AA}"), sampleItem.TemplateId);
                 Assert.AreEqual("Sample Item", sampleItem.TemplateName);
             }

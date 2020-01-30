@@ -8,8 +8,8 @@ using Sitecore.Data.Items;
 using Sitecore.Data.Templates;
 using Sitecore.Diagnostics;
 using Sitecore.Links;
+using Sitecore.Links.UrlBuilders;
 using Sitecore.Resources.Media;
-using Sitecore.SecurityModel;
 using Sitecore.Web.UI.WebControls;
 
 namespace DeloitteDigital.Atlas.Extensions
@@ -112,11 +112,11 @@ namespace DeloitteDigital.Atlas.Extensions
 
             if (imageField?.MediaItem != null)
             {
-                var mediaUrlOptions = MediaUrlOptions.GetThumbnailOptions(imageField.MediaItem);
-                mediaUrlOptions.Width = width > 0 ? width : mediaUrlOptions.Width;
-                mediaUrlOptions.Height = height > 0 ? height : mediaUrlOptions.Height;
-                mediaUrlOptions.UseItemPath = true;
-                return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlOptions);
+                var mediaUrlBuilderOptions = MediaUrlBuilderOptions.GetThumbnailOptions(imageField.MediaItem);
+                mediaUrlBuilderOptions.Width = width > 0 ? width : mediaUrlBuilderOptions.Width;
+                mediaUrlBuilderOptions.Height = height > 0 ? height : mediaUrlBuilderOptions.Height;
+                mediaUrlBuilderOptions.UseItemPath = true;
+                return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlBuilderOptions);
             }
             else
             {

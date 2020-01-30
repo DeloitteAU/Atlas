@@ -1,5 +1,6 @@
 ﻿using System;
 using Sitecore.Data.Items;
+using Sitecore.Links.UrlBuilders;
 using Sitecore.Resources.Media;
 
 namespace DeloitteDigital.Atlas.FieldRendering
@@ -27,7 +28,7 @@ namespace DeloitteDigital.Atlas.FieldRendering
         [Obsolete("This method is obsolete. Please use Url() or Url(MediaOptions) instead")]
         public string UrlOnly()
         {
-            return Url(MediaUrlOptions.GetShellOptions());
+            return Url(MediaUrlBuilderOptions.GetShellOptions());
         }
 
         /// <summary>
@@ -35,21 +36,21 @@ namespace DeloitteDigital.Atlas.FieldRendering
         /// </summary>
         public string Url()
         {
-            return Url(new MediaUrlOptions());
+            return Url(new MediaUrlBuilderOptions());
         }
 
         /// <summary>
         /// Instructs the render to render the media URL only using the provided media url options
         /// </summary>
-        public string Url(MediaUrlOptions mediaUrlOptions)
+        public string Url(MediaUrlBuilderOptions mediaUrlBuilderOptions)
         {
             var imageField = (Sitecore.Data.Fields.ImageField)Item.Fields[FieldName];
 
             if (imageField?.MediaItem != null)
             {
-                mediaUrlOptions.Width = Attributes.ContainsKey("width") ? (int)Attributes["width"] : mediaUrlOptions.Width;
-                mediaUrlOptions.Height = Attributes.ContainsKey("height") ? (int)Attributes["height"] : mediaUrlOptions.Height;
-                return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlOptions);
+                mediaUrlBuilderOptions.Width = Attributes.ContainsKey("width") ? (int)Attributes["width"] : mediaUrlBuilderOptions.Width;
+                mediaUrlBuilderOptions.Height = Attributes.ContainsKey("height") ? (int)Attributes["height"] : mediaUrlBuilderOptions.Height;
+                return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlBuilderOptions);
             }
             else
             {
