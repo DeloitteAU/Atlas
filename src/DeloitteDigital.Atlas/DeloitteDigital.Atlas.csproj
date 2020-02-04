@@ -261,6 +261,8 @@
     <Compile Include="Logging\LogExtensions.cs" />
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Logging\LogScope.cs" />
+    <Compile Include="Mapping\FieldMapping\DecimalFieldMapping.cs" />
+    <Compile Include="Mapping\Meta\PropertyMeta\DecimalPropertyMeta.cs" />
     <Compile Include="Multisite\Datasource\ConventionBasedDatasourceProvider.cs" />
     <Compile Include="Multisite\Datasource\GetDatasourceLocationFromProviders.cs" />
     <Compile Include="Multisite\Datasource\IDataSourceProvider.cs" />
@@ -388,12 +390,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

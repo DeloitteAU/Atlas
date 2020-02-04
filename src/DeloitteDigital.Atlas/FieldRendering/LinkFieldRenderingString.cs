@@ -109,5 +109,21 @@ namespace DeloitteDigital.Atlas.FieldRendering
         {
             get { return LinkField.Text; }
         }
+
+        /// <summary>
+        /// Gets the link query string
+        /// </summary>
+        public string QueryString
+        {
+            get
+            {
+                if (this.LinkField == null)
+                {
+                    return string.Empty;
+                }
+
+                return this.LinkField.QueryString;
+            }
+        }
     }
 }
