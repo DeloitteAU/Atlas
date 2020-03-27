@@ -2,19 +2,19 @@
 using DeloitteDigital.Atlas.FieldRendering;
 using DeloitteDigital.Atlas.Mapping.FieldMapping;
 using DeloitteDigital.Atlas.Mapping.Meta;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
+using Xunit;
 
 namespace DeloitteDigital.Atlas.Tests
 {
-    [TestClass]
     public class SitecoreMappingTests
     {
-        [TestMethod]
+        [Fact]
         public void PropertyMetaBuilderShouldCorrectNumberOfMappedProperties()
         {
             var propertyMetaBuilder = new PropertyMetaBuilder();
             var myModelPropertyMetaMap = propertyMetaBuilder.BuildPropertyMetaMap<MyModel>();
-            Assert.AreEqual(1, myModelPropertyMetaMap.Count());
+            myModelPropertyMetaMap.Count().ShouldBe(1);
         }
 
         public class MyModel
