@@ -5,8 +5,9 @@
     <version>2.3.20200407</version>
     <authors>Deloitte Digital</authors>
     <owners>Deloitte Digital</owners>
-    <licenseUrl>https://github.com/DeloitteDigitalAPAC/Atlas/blob/master/LICENSE</licenseUrl>
+    <license type="file">license\license.txt</license>
     <projectUrl>https://github.com/DeloitteDigitalAPAC/Atlas/</projectUrl>
+    <icon>images\dd-logo-square.png</icon>
     <iconUrl>https://raw.githubusercontent.com/DeloitteDigitalAPAC/Atlas/master/lib/logos/dd-logo-square.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Atlas is the Deloitte Digital Framework for Sitecore Development</description>
@@ -20,5 +21,7 @@
   </metadata>
   <files>
     <file src="..\BuildOutputs\DeloitteDigital.Atlas.dll" target="lib/net48" />
+    <file src="license.txt" target="license" />
+    <file src="dd-logo-square.png" target="images" />
   </files>
 </package>

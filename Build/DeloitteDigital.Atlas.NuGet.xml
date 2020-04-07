@@ -6,7 +6,7 @@
     <NuGetPackageOutputPath>..\..\BuildOutputs</NuGetPackageOutputPath>
   </PropertyGroup>
   <Target Name="BuildNuGetPackage">
-    <Message Text="Copying Atlas asselmbly..." Importance="high" />
+    <Message Text="Copying Atlas assembly..." Importance="high" />
     <ItemGroup>
       <Dlls Include="$(OutputPath)\DeloitteDigital.Atlas.dll" />
     </ItemGroup>
