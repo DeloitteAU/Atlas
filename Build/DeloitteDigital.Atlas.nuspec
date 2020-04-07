@@ -15,7 +15,7 @@
     <tags>sitecore deloitte atlas</tags>
   </metadata>
   <files>
-    <file src="..\BuildOutputs\DeloitteDigital.Atlas.dll" target="lib/net472" />
+    <file src="..\BuildOutputs\DeloitteDigital.Atlas.dll" target="lib" />
     <file src="license.txt" target="license" />
     <file src="dd-logo-square.png" target="images" />
   </files>
