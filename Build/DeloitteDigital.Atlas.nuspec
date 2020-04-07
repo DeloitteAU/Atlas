@@ -13,11 +13,6 @@
     <description>Atlas is the Deloitte Digital Framework for Sitecore Development</description>
     <releaseNotes>Upgraded to Sitecore 9.2 and .NETFramework4.7.2</releaseNotes>
     <tags>sitecore deloitte atlas</tags>
-    <dependencies>
-      <group targetFramework=".NETFramework4.7.2">
-        <dependency id="Sitecore.Mvc" version="[9.2.0]" />
-      </group>
-    </dependencies>
   </metadata>
   <files>
     <file src="..\BuildOutputs\DeloitteDigital.Atlas.dll" target="lib/net472" />
