@@ -20,7 +20,7 @@ namespace DeloitteDigital.Atlas.FieldRendering
         }
 
         /// <summary>
-        /// Instructs the renderer to render the media URL only, not the image control or page editor control.
+        /// Instructs the renderer to render the media URL only, not the image control or experience editor control.
         /// This method will not respect the .ashx setting in the Sitecore configuration
         /// </summary>
         /// <returns>The field's media url</returns>
