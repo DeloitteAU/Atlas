@@ -3,7 +3,7 @@
     /// <summary>
     /// Implement this interface on Rendering Models to customise the rendering view used for 
     /// error messages. E.g. used if the rendering does not output HTML or to change the behaviour 
-    /// of PageEditor vs published site.
+    /// of ExperienceEditor vs published site.
     /// </summary>
     public interface ICustomErrorView
     {

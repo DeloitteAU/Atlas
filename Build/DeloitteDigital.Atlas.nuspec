@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DeloitteDigital.Atlas</id>
-    <version>2.3.20200407</version>
+    <version>2.3.20200411</version>
     <authors>Deloitte Digital</authors>
     <owners>Deloitte Digital</owners>
     <license type="file">license\license.txt</license>

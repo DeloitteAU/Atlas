@@ -26,12 +26,9 @@ namespace DeloitteDigital.Atlas.Mvvm
         protected bool HasError { get; private set; }
 
         /// <summary>
-        /// Gets the boolean value that indicates wether it's in the page editor mode
+        /// Gets the boolean value that indicates whether it's in the experience editor mode
         /// </summary>
-        protected bool IsPageEditor
-        {
-            get { return viewHelper.IsPageEditor(); }
-        }
+        protected bool IsExperienceEditor => viewHelper.IsExperienceEditor;
 
         /// <summary>
         /// Resolves a service instance
@@ -43,15 +40,9 @@ namespace DeloitteDigital.Atlas.Mvvm
             return this.viewHelper.ResolveService<TService>();
         }
 
-        protected Item SiteRootItem
-        {
-            get { return this.viewHelper.GetSiteItem(); }
-        }
+        protected Item SiteRootItem => this.viewHelper.GetSiteItem(); 
 
-        protected Item SiteStartItem
-        {
-            get { return this.viewHelper.GetSiteStartItem(); }
-        }
+        protected Item SiteStartItem => this.viewHelper.GetSiteStartItem(); 
 
         /// <summary>
         /// Runs when control initialises
