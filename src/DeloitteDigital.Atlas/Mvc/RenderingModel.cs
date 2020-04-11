@@ -57,7 +57,7 @@ namespace DeloitteDigital.Atlas.Mvc
         /// <returns>True if is in experience editor mode, otherwise false</returns>
         public bool IsExperienceEditor => Context.PageMode.IsExperienceEditor;
 
-        public bool HasValueOrIsPageEditor(IFieldRenderingString fieldRenderingString)
+        public bool HasValueOrIsExperienceEditor(IFieldRenderingString fieldRenderingString)
         {
             return IsExperienceEditor || HasValue(fieldRenderingString);
         }
