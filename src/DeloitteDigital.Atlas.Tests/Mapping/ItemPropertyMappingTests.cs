@@ -25,6 +25,7 @@ namespace DeloitteDigital.Atlas.Tests.Mapping
                 sampleItem.ItemUrl.ShouldBe("/en/sitecore/content/Home");
                 sampleItem.TemplateId.ShouldBe(new ID("{76036F5E-CBCE-46D1-AF0A-4143F9B557AA}"));
                 sampleItem.TemplateName.ShouldBe("Sample Item");
+                sampleItem.ParentId.ShouldBe(new ID("{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"));
             }
         }
     }

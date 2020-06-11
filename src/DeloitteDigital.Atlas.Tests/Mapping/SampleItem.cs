@@ -25,6 +25,9 @@ namespace DeloitteDigital.Atlas.Tests.Mapping
         [ItemPropertyMap(ItemPropertyMappingType.TemplateName)]
         public string TemplateName { get; set; }
 
+        [ItemPropertyMap(ItemPropertyMappingType.ParentId)]
+        public ID ParentId { get; set; }
+
         [FieldMap]
         public string Title { get; set; }
 
