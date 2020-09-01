@@ -18,9 +18,9 @@ namespace DeloitteDigital.Atlas.Mvc
             return frame;
         }        
 
-        public static IDisposable BeginLink(this HtmlHelper htmlHelper, ILinkFieldRenderingString linkField, string alternateTag = null, bool skipInPageEditor = false)
+        public static IDisposable BeginLink(this HtmlHelper htmlHelper, ILinkFieldRenderingString linkField, string alternateTag = null, bool skipInExperienceEditor = false)
         {
-            if (skipInPageEditor && global::Sitecore.Context.PageMode.IsExperienceEditor)
+            if (skipInExperienceEditor && global::Sitecore.Context.PageMode.IsExperienceEditor)
                 return new EmptyMvcLink();
             return new MvcLink(htmlHelper.ViewContext, linkField, alternateTag);
         }

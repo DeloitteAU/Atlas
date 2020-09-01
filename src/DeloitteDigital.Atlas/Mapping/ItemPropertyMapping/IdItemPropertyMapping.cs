@@ -28,6 +28,9 @@ namespace DeloitteDigital.Atlas.Mapping.ItemPropertyMapping
                 case ItemPropertyMappingType.TemplateId:
                     idProperty.AssignValueToModelProperty(model, item.TemplateID);
                     break;
+                case ItemPropertyMappingType.ParentId:
+                    idProperty.AssignValueToModelProperty(model, item.ParentID ?? ID.Null);
+                    break;
             }
         }
     }

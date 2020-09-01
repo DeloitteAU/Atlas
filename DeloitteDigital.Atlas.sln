@@ -1,14 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeloitteDigital.Atlas", "src\DeloitteDigital.Atlas\DeloitteDigital.Atlas.csproj", "{601B96BD-D95F-4281-9A1B-7D99374DD869}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{170EAE52-10FD-4349-931B-6B48480DAF4E}"
 	ProjectSection(SolutionItems) = preProject
+		Build\dd-logo-square.png = Build\dd-logo-square.png
 		Build\DeloitteDigital.Atlas.NuGet.xml = Build\DeloitteDigital.Atlas.NuGet.xml
 		Build\DeloitteDigital.Atlas.nuspec = Build\DeloitteDigital.Atlas.nuspec
+		Build\license.txt = Build\license.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeloitteDigital.Atlas.Tests", "src\DeloitteDigital.Atlas.Tests\DeloitteDigital.Atlas.Tests.csproj", "{DC86FB1E-21B9-4D4B-8E61-40CEB8967F83}"
@@ -30,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4120DCF-283D-4C71-A165-A67041EBB723}
 	EndGlobalSection
 EndGlobal

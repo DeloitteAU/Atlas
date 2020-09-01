@@ -1,6 +1,6 @@
 ﻿using System;
 using Sitecore.Data.Items;
-using Sitecore.Resources.Media;
+using Sitecore.Links.UrlBuilders;
 
 namespace DeloitteDigital.Atlas.FieldRendering
 {
@@ -20,7 +20,7 @@ namespace DeloitteDigital.Atlas.FieldRendering
             return string.Empty;
         }
 
-        public string Url(MediaUrlOptions mediaUrlOptions)
+        public string Url(MediaUrlBuilderOptions mediaUrlBuilderOptions)
         {
             return string.Empty;
         }

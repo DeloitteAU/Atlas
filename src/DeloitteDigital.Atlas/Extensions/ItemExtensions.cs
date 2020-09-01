@@ -8,8 +8,8 @@ using Sitecore.Data.Items;
 using Sitecore.Data.Templates;
 using Sitecore.Diagnostics;
 using Sitecore.Links;
+using Sitecore.Links.UrlBuilders;
 using Sitecore.Resources.Media;
-using Sitecore.SecurityModel;
 using Sitecore.Web.UI.WebControls;
 
 namespace DeloitteDigital.Atlas.Extensions
@@ -21,24 +21,26 @@ namespace DeloitteDigital.Atlas.Extensions
     public static class ItemExtensions
     {
         /// <summary>
-        /// Gets field value from item with page editor support, and parameters for the field renderer
+        /// Gets field value from item with experience editor support, and parameters for the field renderer
         /// </summary>
         /// <param name="item">Sitecore item</param>
         /// <param name="fieldName">Field name</param>
-        /// <param name="pageEditorSupport">True if page editor support is required, otherwise false</param>
+        /// <param name="experienceEditorSupport">True if experience editor support is required, otherwise false</param>
         /// <param name="attributes">Field renderer parameters</param>
         /// <returns>Field value or field renderer rendered control</returns>
-        public static string GetFieldValue(this Item item, string fieldName, bool pageEditorSupport = false, IDictionary<string, string> attributes = null)
+        public static string GetFieldValue(this Item item, string fieldName, bool experienceEditorSupport = false, IDictionary<string, string> attributes = null)
         {
-            if (pageEditorSupport)
+            if (experienceEditorSupport)
             {
-                var fieldRenderer = new FieldRenderer();
-                fieldRenderer.Item = item;
-                fieldRenderer.FieldName = fieldName;
+                var fieldRenderer = new FieldRenderer
+                {
+                    Item = item,
+                    FieldName = fieldName
+                };
                 if (attributes != null)
                 {
                     fieldRenderer.Parameters = string.Join("&",
-                        attributes.Keys.Select(k => string.Format("{0}={1}", k, attributes[k])));
+                        attributes.Keys.Select(k => $"{k}={attributes[k]}"));
                 }
                 return fieldRenderer.Render();
             }
@@ -112,11 +114,11 @@ namespace DeloitteDigital.Atlas.Extensions
 
             if (imageField?.MediaItem != null)
             {
-                var mediaUrlOptions = MediaUrlOptions.GetThumbnailOptions(imageField.MediaItem);
-                mediaUrlOptions.Width = width > 0 ? width : mediaUrlOptions.Width;
-                mediaUrlOptions.Height = height > 0 ? height : mediaUrlOptions.Height;
-                mediaUrlOptions.UseItemPath = true;
-                return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlOptions);
+                var mediaUrlBuilderOptions = MediaUrlBuilderOptions.GetThumbnailOptions(imageField.MediaItem);
+                mediaUrlBuilderOptions.Width = width > 0 ? width : mediaUrlBuilderOptions.Width;
+                mediaUrlBuilderOptions.Height = height > 0 ? height : mediaUrlBuilderOptions.Height;
+                mediaUrlBuilderOptions.UseItemPath = true;
+                return MediaManager.GetMediaUrl(imageField.MediaItem, mediaUrlBuilderOptions);
             }
             else
             {

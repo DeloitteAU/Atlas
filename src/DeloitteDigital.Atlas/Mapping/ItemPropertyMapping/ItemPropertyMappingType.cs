@@ -7,6 +7,7 @@
         TemplateId,
         TemplateName,
         ItemName,
-        ItemPath
+        ItemPath,
+        ParentId
     }
 }
