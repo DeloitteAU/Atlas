@@ -33,6 +33,31 @@ Refer to the [Package page on NuGet](https://www.nuget.org/packages/DeloitteDigi
 
 ## Change log
 
+'3.6776.0' - 15 February 2022
+
+* Upgraded to Sitecore 10.2.0 and .NET Framework 4.8
+
+'3.5862.0' - 29 June 2021
+
+* Upgraded to Sitecore 10.1.1 and .NET Framework 4.8
+
+'3.1.0' - 20 May 2021
+
+* Upgraded to Sitecore 10.1 and .NET Framework 4.8
+
+'3.0.0' - 20 May 2021
+
+* Upgraded to Sitecore 10.0 and .NET Framework 4.8
+
+'2.3.0' - 11 June 2020
+
+* Upgraded to Sitecore 9.3 and .NET Framework 4.8
+* Migrated from Package References to Project References
+
+'2.2.0' - 7 April 2020
+
+* Upgraded to Sitecore 9.2 and .NETFramework 4.7.2
+
 `1.0.1` - 7 December 2017
 
 * Add synchronisation around initial model mapping to resolve potential race condition ([issue #7](https://github.com/DeloitteDigitalAPAC/Atlas/issues/7))
