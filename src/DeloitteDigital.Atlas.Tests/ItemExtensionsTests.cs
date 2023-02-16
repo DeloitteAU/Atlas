@@ -1,20 +1,20 @@
 ﻿using DeloitteDigital.Atlas.Extensions;
 using DeloitteDigital.Atlas.Tests.FakeDB;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
+using Xunit;
 
 namespace DeloitteDigital.Atlas.Tests
 {
-    [TestClass]
     public class ItemExtensionsTests
     {
-        [TestMethod]
+        [Fact]
         public void GetFieldsValueShouldReturnCorrectValue()
         {
             using (var db = new DspFakeDb())
             {
                 var home = db.GetHomeItem();
 
-                Assert.IsTrue(home.GetFieldValue("Title").Equals("Sitecore Experience Platform"));                
+                home.GetFieldValue("Title").ShouldBe("Sitecore Experience Platform");
             }            
         }
     }

@@ -7,7 +7,7 @@ namespace DeloitteDigital.Atlas.Logging.Log4net
     {
         public Log4netService()
         {
-            if (!LogManager.GetRepository().Configured)
+            if (!log4net.LogManager.GetLoggerRepository().Configured)
             {
                 log4net.Config.XmlConfigurator.Configure();
             }

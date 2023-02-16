@@ -22,17 +22,14 @@ namespace DeloitteDigital.Atlas.Mvvm
         protected TViewModel ViewModel { get; private set; }
 
         /// <summary>
-        /// Gets or sets the value that indicates whether an error has occured while trying to initialise the view model object
+        /// Gets or sets the value that indicates whether an error has occurred while trying to initialise the view model object
         /// </summary>
         protected bool HasError { get; private set; }
 
         /// <summary>
-        /// Gets the boolean value that indicates wether it's in the page editor mode
+        /// Gets the boolean value that indicates whether it's in the experience editor mode
         /// </summary>
-        protected bool IsPageEditor
-        {
-            get { return viewHelper.IsPageEditor(); }
-        }
+        protected bool IsExperienceEditor => viewHelper.IsExperienceEditor;
 
         /// <summary>
         /// Resolves a service instance

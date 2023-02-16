@@ -2,17 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>DeloitteDigital.Atlas</id>
-    <version>1.1.0</version>
+    <version>2.2.20200411</version>
     <authors>Deloitte Digital</authors>
     <owners>Deloitte Digital</owners>
-    <licenseUrl>https://github.com/DeloitteDigitalAPAC/Atlas/blob/master/LICENSE</licenseUrl>
+    <license type="file">license\license.txt</license>
     <projectUrl>https://github.com/DeloitteDigitalAPAC/Atlas/</projectUrl>
-	  <iconUrl>https://raw.githubusercontent.com/DeloitteDigitalAPAC/Atlas/master/lib/logos/dd-logo-square.png</iconUrl>
+    <icon>images\dd-logo-square.png</icon>
+    <iconUrl>https://raw.githubusercontent.com/DeloitteDigitalAPAC/Atlas/master/lib/logos/dd-logo-square.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Atlas is the Deloitte Digital Framework for Sitecore Development</description>
-    <tags>sitecore deloitte atlas</tags>
+    <releaseNotes>Upgraded to Sitecore 9.2 and .NETFramework4.7.2</releaseNotes>
+    <tags>sitecore deloitte experience accelerator atlas</tags>
   </metadata>
   <files>
     <file src="..\BuildOutputs\DeloitteDigital.Atlas.dll" target="lib" />
+    <file src="license.txt" target="license" />
+    <file src="dd-logo-square.png" target="images" />
   </files>
 </package>

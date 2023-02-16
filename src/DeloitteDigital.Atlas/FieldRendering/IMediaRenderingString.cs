@@ -9,7 +9,7 @@ namespace DeloitteDigital.Atlas.FieldRendering
     public interface IMediaRenderingString : IFieldRenderingString
     {
         /// <summary>
-        /// Instructs the renderer to render the media URL only, not the image control or page editor control
+        /// Instructs the renderer to render the media URL only, not the image control or experience editor control
         /// </summary>
         /// <returns>The field's media url</returns>
         string UrlOnly();

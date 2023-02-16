@@ -10,12 +10,10 @@
         }
 
         /// <summary>
-        /// Gets boolean value that indicate whether the current rendering context in page editor mode
+        /// Gets boolean value that indicate whether the current rendering context in experience editor mode
         /// </summary>
         /// <returns>True if is in page editor mode, otherwise false</returns>
-        public bool IsPageEditor()
-        {
-            return Sitecore.Context.PageMode.IsExperienceEditor;
-        }
+        public bool IsExperienceEditor => Sitecore.Context.PageMode.IsExperienceEditor;
+        
     }
 }

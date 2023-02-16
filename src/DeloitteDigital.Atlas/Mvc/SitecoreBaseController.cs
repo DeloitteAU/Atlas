@@ -50,22 +50,13 @@ namespace DeloitteDigital.Atlas.Mvc
         /// <summary>
         /// Gets the current item from the Sitecore.Context class
         /// </summary>
-        protected Item CurrentItem
-        {
-            get
-            {
-                return Sitecore.Context.Item;
-            }
-        }
+        protected Item CurrentItem => Sitecore.Context.Item;
 
         /// <summary>
-        /// Gets boolean value that indicate whether the current rendering context in page editor mode
+        /// Gets boolean value that indicate whether the current rendering context in experience editor mode
         /// </summary>
-        /// <returns>True if is in page editor mode, otherwise false</returns>
-        public bool IsPageEditor()
-        {
-            return Sitecore.Context.PageMode.IsExperienceEditor;
-        }
+        /// <returns>True if is in experience editor mode, otherwise false</returns>
+        public bool IsExperienceEditor => Sitecore.Context.PageMode.IsExperienceEditor;
 
     }
 }

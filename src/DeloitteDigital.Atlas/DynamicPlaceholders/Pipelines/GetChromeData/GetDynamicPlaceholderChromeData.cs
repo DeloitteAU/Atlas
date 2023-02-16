@@ -1,4 +1,7 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
+using Sitecore.Abstractions;
+using Sitecore.DependencyInjection;
 using Sitecore.Diagnostics;
 using Sitecore.Pipelines.GetChromeData;
 
@@ -9,6 +12,8 @@ namespace DeloitteDigital.Atlas.DynamicPlaceholders.Pipelines.GetChromeData
     /// </summary>
     public class GetDynamicPlaceholderChromeData : GetChromeDataProcessor
     {
+        public GetDynamicPlaceholderChromeData() : base(ServiceLocator.ServiceProvider.GetRequiredService<BaseClient>()) { }
+
         public override void Process(GetChromeDataArgs args)
         {
             Assert.ArgumentNotNull(args, "args");
